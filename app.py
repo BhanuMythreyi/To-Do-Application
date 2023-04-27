@@ -11,7 +11,7 @@ import json
 obj = Flask(__name__)
 
 try:
-    connec = mysql.connector.connect(host="localhost",user="root",password="Jaishrikrishna6@",database="todonotes")
+    connec = mysql.connector.connect(host="localhost",user="root",password="password",database="todonotes")
     connec.autocommit=True
     cur = connec.cursor(dictionary=True)
     print("Successfully connected")
