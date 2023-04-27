@@ -1,0 +1,32 @@
+{% block body %}
+<html>
+    <style>
+        .d2 {
+                background-color: rgb(206, 153, 219);
+                text-align: center;
+                padding: 15px;
+                font-family: sans-serif;
+        }
+        body{
+            background-color: grey;
+        }
+    </style>
+    <body>
+        <header class="d2">Please update your notes here!</header>
+        <nav>
+            <form method="POST" action="/update2/{{title}}">
+                <pre>
+
+
+
+
+
+                <center><textarea placeholder="update your task here" name="notes" id="notes"></textarea></center>
+                <center><button type="submit">Update</button></center>
+                </pre>
+            </form>
+        </nav>
+
+    </body>
+</html>
+{% endblock %}
