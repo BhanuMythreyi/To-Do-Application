@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Home Page of Notes Application</title>
+        <style>
+            .h{
+                background-color: rgb(206, 153, 219);
+                text-align: center;
+                padding: 25px;
+                font-family: sans-serif;
+            }
+
+            nav{
+                display:flex;
+                justify-content: space-around;
+                color:beige;
+            }
+
+            div {
+                font-family: sans-serif;
+            }
+
+            nav p:hover {
+                color: rgb(206, 153, 219);
+                cursor: pointer;
+            }
+
+            .t1 {
+                color: rgb(131, 14, 160);
+            }
+
+            body{
+                background-color: grey;
+            }
+        </style>
+
+        <script>
+            function SignUP(){
+                window.location="signup";
+            }
+
+            function LogIN(){
+                window.location="login";
+            }
+        </script>
+    </head>
+    <body>
+        <header class="h"> TO DO NOTES APPLICATION</header>
+
+        <nav>
+            <div>
+                <p onclick="SignUP()">Sign Up</p>
+            </div>
+
+            <div>
+                <p onclick="LogIN()">Log in</p>
+            </div>
+        </nav>
+
+        <div class="t1">
+            <h3> What can you do here? </h3>
+            <p>You can
+            <dl>
+                <dd>Create your account</dd><br/>
+                <dd>Add your tasks</dd><br/>
+                <dd>Mark their status</dd><br/>
+                <dd>Update them</dd><br/>
+                <dd>Or even delete them,</dd><br/>
+            </dl>
+            <p> all by your own!</p>
+        </div>
+    </body>
+</html>
