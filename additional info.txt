@@ -1,0 +1,11 @@
+To install flask:
+py -m pip install flask
+
+
+TO run flask:
+py -m flask run
+
+
+TO enable development mode: 
+$env:FLASK_ENV = "development"
+py -m flask run
