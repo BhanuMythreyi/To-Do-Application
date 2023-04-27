@@ -1,0 +1,89 @@
+{% block body %}
+<html>
+    <head>
+        <title> TO DO NOTES</title>
+        <style>
+            .m{
+                background-color: rgb(206, 153, 219);
+                text-align: center;
+                padding: 25px;
+                font-family: sans-serif;
+            }
+
+            body{
+                background-color: grey;
+            }
+
+            #notes{
+                width: 320px;
+                height: 40px;
+            }
+
+            #title{
+                width: 320px;
+                height: 30px;
+            }
+
+            nav input:focus{
+                background-color: rgb(206, 153, 219);
+            }
+
+            div {
+                color: beige;
+            }
+            div p:hover{
+                color: rgb(206, 153, 219);
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header class="m">Notes Application</header>
+
+        <div>
+            <p> Hi {{username}}
+                <a href="/logout"> <button>Logout</button></a>
+            </p>
+        </div>
+        <nav>
+            <form method="POST" action="/note">
+                <pre>
+
+
+
+
+
+                <center><input type="text" placeholder="Title please.." name="title" id="title"/></center>
+                <center><textarea placeholder="what is your next task?" name="notes" id="notes"></textarea></center>
+                <center><button type="submit">Add Notes</button></center>
+                </pre>
+            </form>
+        </nav>
+
+        <table border="2">
+            <title>Tasks</title>
+            <tr>
+                <th> Title </th>
+                <th> Edit Title </th>
+                <th> Task </th>
+                <th> Edit Task </th>
+                <th> Status</th>
+            </tr>
+
+            {% for i in res %}
+            {% if i['username']==session['username']%}
+            <tr>
+                <td> {{i['title']}} </td>
+                <td> <a href="/updater1/{{i['notes']}}"><button>Edit</button></a></td>
+                <td> {{i['notes']}} </td>
+                <td> <a href="/updater2/{{i['title']}}"><button>Edit</button></a></td>
+                <td> <a href="/delete/{{i['title']}}"><button>Mark as Complete</button></a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+    </body>
+</html>
+
+{% endblock %}
