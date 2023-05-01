@@ -1,4 +1,3 @@
-import os
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -6,7 +5,6 @@ from flask import redirect
 from flask import session
 from flask_session import Session
 import mysql.connector
-import json
 
 obj = Flask(__name__)
 
