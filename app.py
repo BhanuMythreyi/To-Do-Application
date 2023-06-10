@@ -9,7 +9,7 @@ import mysql.connector
 obj = Flask(__name__)
 
 try:
-    connec = mysql.connector.connect(host="localhost",user="root",password="password",database="todonotes")
+    connec = mysql.connector.connect(host="localhost",user="root",password="Jaishrikrishna6@",database="todonotes")
     connec.autocommit=True
     cur = connec.cursor(dictionary=True)
     print("Successfully connected")
@@ -149,3 +149,6 @@ def logout():
     session.pop('loggedin',None)
     session.pop('username',None)
     return redirect('/log')
+
+if __name__ == '__main__':
+    obj.run(debug=True,host='localhost',port=5000)
